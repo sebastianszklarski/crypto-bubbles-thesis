@@ -1,2 +1,2 @@
-# crypto-bubbles-thesis
+# Cryptocurrency market speculative bubbles
 Code, data and results for a bachelor thesis on cryptocurrency market bubbles using the Phillips-Shi-Yu approach.
