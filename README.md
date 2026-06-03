@@ -8,7 +8,7 @@ Code, data and results for a bachelor thesis on cryptocurrency market bubbles us
 
 **`hlz_volatility.R`** — implements the nonparametric variance function estimator of Harvey et al. (2023) with a uniform kernel, including bandwidth selection via leave-one-out and leave-p-out cross-validation.
 
-**`radf.R`** — uses the `exuber` package for recursive ADF-based explosiveness tests and implements Monte Carlo critical value estimation for the date-stamping procedure accounting for the multiple testing problem, and the `locate_episodes` function for date-stamping explosive periods.
+**`radf.R`** — uses the `exuber` package for recursive ADF-based explosiveness tests and implements Monte Carlo critical value estimation for the date-stamping procedure accounting for the multiple testing problem, and a function for date-stamping explosive periods.
 
 ## Results
 
