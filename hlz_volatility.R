@@ -1,6 +1,7 @@
 library(lubridate)
 library(forecast)
 library(dplyr)
+library(zoo)
 
 estimate_variance <- function(y, k, b1, b2, sd0) {
   N <- length(y)
