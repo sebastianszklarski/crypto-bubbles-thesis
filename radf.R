@@ -1,3 +1,4 @@
+library(lubridate)
 library(forecast)
 library(exuber)
 library(dplyr)
@@ -32,6 +33,7 @@ locate_episodes <- function(bsadf, cv, dates, min_duration = 1) {
 }
 
 data <- read.csv("close_price.csv")
+data$datetime <- as_datetime(data$datetime) 
 data[, 2:4] <- log(data[, 2:4])
 
 auto.arima(data$btc, ic = "bic", max.q = 0, max.d = 1) 
@@ -83,6 +85,7 @@ saveRDS(list(gsadf = list(gsadf_mc_cv = as.matrix(gsadf_mc_cv),
 
 cv <- readRDS("results/radf_cv.rds")
 bsadf <- read.csv("results/bsadf.csv")
+bsadf$datetime <- as_datetime(bsadf$datetime) 
 bsadf <- bsadf %>% na.omit()
 
 episodes_btc_mc <- locate_episodes(bsadf$bsadf_btc, cv = cv$bsadf$bsadf_mc_cv[2], bsadf$datetime)
