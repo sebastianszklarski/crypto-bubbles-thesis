@@ -132,6 +132,7 @@ compute_CV2_lpo <- function(y, k, b1, b2, sd0, p) {
 }
 
 data <- read.csv("close_price.csv")
+data$datetime <- as_datetime(data$datetime)                                
 data[, 2:4] <- log(data[, 2:4])
 
 auto.arima(data$btc, ic = "bic", max.q = 0, max.d = 1) 
