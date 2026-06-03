@@ -4,11 +4,11 @@ Code, data and results for a bachelor thesis on cryptocurrency market bubbles us
 
 ## Files
 
-**`close_price.csv`** — daily closing prices of Bitcoin, Ether and Litecoin from 2016-01-01 to 2025-12-31, sourced from [CoinGecko](https://www.coingecko.com).
+**`close_price.csv`** - daily closing prices of Bitcoin, Ether and Litecoin from 2016-01-01 to 2025-12-31, sourced from [CoinGecko](https://www.coingecko.com).
 
-**`hlz_volatility.R`** — implements the nonparametric variance function estimator of Harvey et al. (2023) with a uniform kernel, including bandwidth selection via leave-one-out and leave-p-out cross-validation.
+**`hlz_volatility.R`** - implements the nonparametric variance function estimator of Harvey et al. (2023) with a uniform kernel, including bandwidth selection via leave-one-out and leave-p-out cross-validation.
 
-**`radf.R`** — uses the `exuber` package for recursive ADF-based explosiveness tests and implements Monte Carlo critical value estimation for the date-stamping procedure accounting for the multiple testing problem.
+**`radf.R`** - uses the `exuber` package for recursive ADF-based explosiveness tests and implements Monte Carlo critical value estimation for the date-stamping procedure accounting for the multiple testing problem.
 
 ## Results
 
