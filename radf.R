@@ -68,9 +68,9 @@ bsadf_cb_cv_eth <- radf_wb_cv2(data$eth, minw0, nboot = 5000, tb = tb, seed = 12
 bsadf_cb_cv_ltc <- radf_wb_cv2(data$ltc, minw0, nboot = 5000, tb = tb, seed = 123)$gsadf_cv
 
 data.frame(datetime = data$datetime,
-           bsadf_btc = c(rep(NA, minw0 - 1), bsadf_btc),
-           bsadf_eth = c(rep(NA, minw0 - 1), bsadf_eth),
-           bsadf_ltc = c(rep(NA, minw0 - 1), bsadf_ltc)) %>%
+           bsadf_btc = c(rep(NA, minw0), bsadf_btc),
+           bsadf_eth = c(rep(NA, minw0), bsadf_eth),
+           bsadf_ltc = c(rep(NA, minw0), bsadf_ltc)) %>%
   write.csv(file = "results/bsadf.csv", row.names = FALSE)
 
 saveRDS(list(gsadf = list(gsadf_mc_cv = as.matrix(gsadf_mc_cv), 
