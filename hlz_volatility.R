@@ -2,6 +2,7 @@ library(lubridate)
 library(forecast)
 library(dplyr)
 library(zoo)
+library(psych)
 
 estimate_variance <- function(y, k, b1, b2, sd0) {
   N <- length(y)
@@ -99,6 +100,10 @@ compute_CV2 <- function(y, k, b1, b2, sd0, p) {
 data <- read.csv("close_price.csv")
 data$datetime <- as_datetime(data$datetime) 
 data[, 2:4] <- log(data[, 2:4])
+
+describe(diff(data$btc)) %>% mutate(kurtosis = kurtosis + 3)
+describe(diff(data$eth)) %>% mutate(kurtosis = kurtosis + 3)
+describe(diff(data$ltc)) %>% mutate(kurtosis = kurtosis + 3)                                
 
 auto.arima(data$btc, ic = "bic", max.q = 0, max.d = 1) 
 auto.arima(data$eth, ic = "bic", max.q = 0, max.d = 1)
